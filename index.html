@@ -1,0 +1,194 @@
+<html>
+<head>
+  <title>TextGlass</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="img/textglass_icon_small.png?1" rel="shortcut icon"/>
+  <style type="text/css">
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      background-color: #FFFFFF;
+    }
+    a {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+    }
+    .canvas {
+      padding: 30px;
+    }
+    .logo {
+      width: 300px;
+      padding-top: 10px;
+      padding-bottom: 30px;
+    }
+    .content {
+      padding-left: 43px;
+    }
+    .out {
+      color: #0000FF;
+      font-family: "Courier New", Courier, monospace;
+      padding-left: 20px;
+    }
+    .err {
+      color: #FF0000;
+      font-family: "Courier New", Courier, monospace;
+      padding-left: 20px;
+    }
+    .input {
+      width: 100%;
+      max-width: 500px;
+    }
+    p {
+      max-width: 500px;
+      padding-right: 10px;
+    }
+    a:link {
+      cursor: pointer;
+      text-decoration: underline;
+      color: #008FB4;
+    }
+    a:visited {
+      color: #C91E50;
+    }
+    .copyright {
+      font-style: italic;
+      font-size: smaller;
+    }
+    @media (max-width: 500px) {
+      .canvas {
+        padding: 15px;
+      }
+      .logo {
+        max-width: 200px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+      }
+      .content {
+        padding-left: 27px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="canvas">
+
+  <div class="logo">
+    <img src="img/textglass_small.png" alt="TextGlass">
+  </div>
+
+  <div class="content">
+
+    <h3>
+      WHAT IS TEXTGLASS?
+    </h3>
+
+    <p>
+      TextGlass is a text classification project. This encompasses things
+      like device, browser, and OS detection. Basically, give TextGlass a
+      string (like a User-Agent request header) and it will tell you what it is.
+      <br><br>
+      TextGlass has extended the idea of classification into generic domains.
+      The domain tells the TextGlass client how to classify the input into a
+      result. This will allow this project and 3rd parties to create their own
+      domains and use them with standard TextGlass clients. This also allows
+      you to a run a domain across a large variety of languages and platforms
+      and achieve identical results.
+      <br><br>
+      Currently TextGlass has client support for the following languages and platforms:
+      <br><br>
+      Javascript, C, and Java
+      <br><br>
+      We are looking to expand our client offering, so reach out if you would
+      like to help.
+      <br><br>
+      TextGlass supports the following domains:
+      <br><br>
+      Device detection, Browser detection, and OS detection
+    </p>
+
+    <b>DEMO:</b><br>
+    <div id="demotext">Loading...</div>
+    <br>
+    <b>LINKS:</b><br>
+    <a href="https://github.com/TextGlass">Github project home</a><br>
+    <a href="https://github.com/TextGlass/reference/wiki/Domain-Specification">Domain specification</a><br>
+    <a href="/performance">Performance</a><br>
+    <a href="mailto:project@textglass.org">Contact</a><br>
+    <br>
+    <b>DOMAINS:</b><br>
+    <a href="https://github.com/TextGlass/device">Device detection</a><br>
+    <a href="https://github.com/TextGlass/browser">Browser detection</a><br>
+    <a href="https://github.com/TextGlass/os">OS detection</a><br>
+    <br>
+    <b>CLIENTS:</b><br>
+    <a href="https://github.com/TextGlass/reference">Reference client</a><br>
+    <a href="https://github.com/TextGlass/c">C client</a><br>
+    <a href="https://github.com/TextGlass/javascript">Javascript client</a>
+    (<a href="javascript">demo</a>)<br>
+    <a href="https://github.com/TextGlass/java">Java client</a><br>
+    <br>
+    <b>LICENSE:</b><br>
+    <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a><br>
+    <br>
+    <div class="copyright">Copyright (c) 2015 TextGlass</div><br>
+
+  </div>
+
+  <script src="javascript/js/textglass.js"></script>
+
+  <script>
+    var textglass = textglass || {};
+    function main() {
+      var browserURL = "http://textglass.org/browser/domain/patterns.json";
+      var osURL = "http://textglass.org/os/domain/patterns.json";
+      if(textglass.loaded) {
+        textglass.loadURLs(browserURL, undefined, undefined, undefined, domainReady);
+        textglass.loadURLs(osURL, undefined, undefined, undefined, domainReady);
+      } else {
+        get('demotext').innerHTML = 'Error, couldn\'t load TextGlass Javascript client.';
+      }
+    }
+    function get(id) {
+      return document.getElementById(id);
+    }
+    function domainReady(state, msg, domain) {
+      if(state === 'error') {
+        get('demotext').innerHTML = msg;
+      } else if(textglass.domains.browser && textglass.domains.os) {
+        var browser = textglass.domains.browser.classify(navigator.userAgent);
+        var os = textglass.domains.os.classify(navigator.userAgent);
+        if(!browser.error) {
+          get('demotext').innerHTML = 'Your browser is ' + browser.name +
+            (browser.mobile?' (mobile)':'') +
+            ' version ' + browser.version + '.';
+        } else {
+          get('demotext').innerHTML = 'You are using an unknown browser.';
+        }
+        if(!os.error) {
+          get('demotext').innerHTML += ' Your operating system is ' + os.name + '.';
+        } else {
+          get('demotext').innerHTML += ' You are using an unknown operating system.';
+        }
+      }
+    }
+    main();
+  </script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66901165-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</div>
+</body>
+</html>
