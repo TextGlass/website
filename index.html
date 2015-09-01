@@ -166,12 +166,13 @@
         if(!browser.error) {
           get('demotext').innerHTML = 'Your browser is ' + browser.name +
             (browser.mobile?' (mobile)':'') +
-            ' version ' + browser.version + '.';
+            (browser.version? ' version ' + browser.version : '') + '.';
         } else {
           get('demotext').innerHTML = 'You are using an unknown browser.';
         }
         if(!os.error) {
-          get('demotext').innerHTML += ' Your operating system is ' + os.name + '.';
+          get('demotext').innerHTML += ' Your operating system is ' + os.name +
+            (os.version ? ' ' + os.version : '') + '.';
         } else {
           get('demotext').innerHTML += ' You are using an unknown operating system.';
         }
