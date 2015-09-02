@@ -166,18 +166,18 @@
       } else if(textglass.domains.browser && textglass.domains.os) {
         var browser = textglass.domains.browser.classify(navigator.userAgent);
         var os = textglass.domains.os.classify(navigator.userAgent);
-        if(!browser.error) {
+        if(browser.unknown) {
+          get('demotext').innerHTML = 'You are using an unknown browser.';
+        } else {
           get('demotext').innerHTML = 'Your browser is ' + browser.name +
             (browser.mobile?' (mobile)':'') +
             (browser.version? ' version ' + browser.version : '') + '.';
-        } else {
-          get('demotext').innerHTML = 'You are using an unknown browser.';
         }
-        if(!os.error) {
+        if(os.unknown) {
+          get('demotext').innerHTML += ' You are using an unknown operating system.';
+        } else {
           get('demotext').innerHTML += ' Your operating system is ' + os.name +
             (os.version ? ' ' + os.version : '') + '.';
-        } else {
-          get('demotext').innerHTML += ' You are using an unknown operating system.';
         }
       }
     }
