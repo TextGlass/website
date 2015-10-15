@@ -30,6 +30,9 @@
     .content {
       padding-left: 43px;
     }
+    .sub {
+      padding-left: 20px;
+    }
     .out {
       color: #0000FF;
       font-family: "Courier New", Courier, monospace;
@@ -95,24 +98,34 @@
       TextGlass is a text classification project. This encompasses things
       like device, browser, and OS detection. Basically, give TextGlass a
       string (like a User-Agent request header) and it will tell you what it is.
-      <br><br>
+    </p>
+    <p class="max">
       TextGlass has extended the idea of classification into generic JSON
       domains. The domain tells the TextGlass client how to classify the input
       into a result. This will allow this project and 3rd parties to create their
       own domains and use them with standard TextGlass clients. This also allows
       you to a run a domain across a large variety of languages and platforms
       and achieve identical results.
-      <br><br>
-      Currently TextGlass has client support for the following languages and platforms:
-      <br><br>
-      Javascript, C, and Java
-      <br><br>
+    </p>
+    <p class="max">
+      Currently TextGlass has client support for the following languages and
+      platforms:
+    </p>
+    <p class="max sub">
+        Javascript, C, and Java
+    </p>
+    <p class="max">
       We are looking to expand our client offering, so reach out if you would
       like to help.
-      <br><br>
+    </p>
+    <p class="max">
       TextGlass supports the following domains:
-      <br><br>
-      Device detection, Browser detection, and OS detection
+    </p>
+    <p class="max sub">
+        Device, Browser, and OS
+    </p>
+    <p class="max">
+      For more information, please scroll down to the FAQ section.
     </p>
 
     <b>DEMO:</b><br>
@@ -138,6 +151,47 @@
     <br>
     <b>LICENSE:</b><br>
     <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a><br>
+    <br>
+
+    <h3>
+      FAQ
+    </h3>
+
+    <ul>
+      <li>
+        <p class="max">
+          How do you do mobile detection with TextGlass?
+          <br><br>
+          Classify the User-Agent string against the Browser and OS domains.
+          Then check if the "mobile" attribute is set to "true" on either domain.
+          Basically we are relying on Browser and OS signatures to tell us if the
+          requestor is on a mobile platform.
+        </p>
+      </li>
+      <li>
+        <p class="max">
+          Can you use the Device domain to do mobile detection?
+          <br><br>
+          Yes, simply classify the User-Agent string against the Device domain and
+          check if the "is_wireless_device" attribute is set to "true".
+        </p>
+      </li>
+      <li>
+        <p class="max">
+          How do you detect tablets?
+          <br><br>
+          Using the Device domain, check if "is_tablet" is set to "true".
+        </p>
+      </li>
+      <li>
+        <p class="max">
+          How do you detect web crawlers, search engines, and bots?
+          <br><br>
+          Using the Device domain, check if "is_bot" is set to "true".
+        </p>
+      </li>
+    </ul>
+
     <br>
     <div class="copyright">Copyright (c) 2015 TextGlass</div><br>
 
