@@ -99,8 +99,8 @@
 
     <p class="max">
       TextGlass is a text classification project. This encompasses things
-      like device, browser, and OS detection. Basically, give TextGlass a
-      string (like a User-Agent request header) and it will tell you what it is.
+      like device, browser, and OS detection. Give TextGlass a
+      string (like a HTTP User-Agent request header) and it will tell you what it is.
     </p>
     <p class="max">
       TextGlass has extended the idea of classification into generic JSON
@@ -171,17 +171,22 @@
           <b>How do you do mobile detection with TextGlass?</b>
           <br><br>
           Classify the User-Agent string against the Browser and OS domains.
-          Then check if the "mobile" attribute is set to "true" on either domain.
-          Basically we are relying on Browser and OS signatures to tell us if the
-          requestor is on a mobile platform.
+          Next check if the "mobile" attribute is set to "true" on either domain.
+          This method relies on the Browser and OS signatures to tell us if the
+          requestor is on a mobile platform. This is the best method because the
+          set of known operating systems and browsers is small, stable, and manageable.
         </p>
       </li>
       <li>
         <p class="max">
           <b>Can you use the Device domain to do mobile detection?</b>
           <br><br>
-          Yes, simply classify the User-Agent string against the Device domain and
+          Yes, classify the User-Agent string against the Device domain and
           check if the "is_mobile_device" attribute is set to "true".
+          This method relies on identifying the actual device to tell us if the
+          requestor is on a known mobile device. The downside to this method is
+          that TextGlass can only identify devices which have been defined in the
+          Device domain. The set of mobile devices is large and always changing.
         </p>
       </li>
       <li>
@@ -196,6 +201,26 @@
           <b>How do you detect web crawlers, search engines, and bots?</b>
           <br><br>
           Using the Device domain, check if "is_bot" is set to "true".
+        </p>
+      </li>
+      <li>
+        <p class="max">
+          <b>How can I contribute?</b>
+          <br><br>
+          By creating issues on the Github project pages for missing operating
+          systems, browsers, and devices. Also, by contributing TextGlass clients
+          for languages and platforms we do not support. Please use the reference
+          client and the TextGlass specification for creating new clients.
+        </p>
+      </li>
+      <li>
+        <p class="max">
+          <b>Does TextGlass compete with commericial device detection vendors?</b>
+          <br><br>
+          No, we encourge 3rd parties to leverage the TextGlass client ecosystem
+          by creating their own TextGlass domains (please see the TextGlass specification).
+          3rd parties, open source or commercial, are free to distribute their
+          TextGlass domains using their own licensing model, free or paid.
         </p>
       </li>
     </ul>
