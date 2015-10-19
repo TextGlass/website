@@ -180,8 +180,8 @@
         <p class="max">
           <b>How do you do mobile detection with TextGlass?</b>
           <br><br>
-          Classify the User-Agent string against the Browser and OS domains.
-          Next check if the "mobile" attribute is set to "true" on either domain.
+          Classify an HTTP User-Agent string against the Browser and OS domains.
+          Check if the "mobile" attribute is set to "true" on either domain.
           This method relies on the Browser and OS signatures to tell us if the
           requestor is on a mobile platform. This is the best method because the
           set of known operating systems and browsers is small, stable, and manageable.
@@ -193,7 +193,7 @@
         <p class="max">
           <b>Can you use the Device domain to do mobile detection?</b>
           <br><br>
-          Yes, classify the User-Agent string against the Device domain and
+          Yes, classify an HTTP User-Agent string against the Device domain and
           check if the "is_mobile_device" attribute is set to "true".
           This method relies on identifying the actual device to tell us if the
           requestor is on a known mobile device. The downside to this method is
@@ -219,6 +219,15 @@
           Using the Device domain, check if "is_bot" is set to "true".
           <br><br>
           <a href="http://codepen.io/TextGlass/pen/gaXMmB?editors=101">CodePen example</a>
+        </p>
+      </li>
+      <li>
+        <p class="max">
+          <b>Is TextGlass some kind of NLP engine?</b>
+          <br><br>
+          TextGlass only performs one part of a classical NLP engine, which is
+          named entity detection. Each domain can be considered an independent
+          entity index.
         </p>
       </li>
       <li>
