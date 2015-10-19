@@ -194,7 +194,7 @@
           <b>Can you use the Device domain to do mobile detection?</b>
           <br><br>
           Yes, classify an HTTP User-Agent string against the Device domain and
-          check if the "is_mobile_device" attribute is set to "true".
+          check if the "mobile" attribute is set to "true".
           This method relies on identifying the actual device to tell us if the
           requestor is on a known mobile device. The downside to this method is
           that TextGlass can only identify devices which have been defined in the
@@ -207,7 +207,7 @@
         <p class="max">
           <b>How do you detect tablets?</b>
           <br><br>
-          Using the Device domain, check if "is_tablet" is set to "true".
+          Using the Device domain, check if "tablet" is set to "true".
           <br><br>
           <a href="http://codepen.io/TextGlass/pen/gaXMmB?editors=101">CodePen example</a>
         </p>
@@ -216,7 +216,7 @@
         <p class="max">
           <b>How do you detect web crawlers, search engines, and bots?</b>
           <br><br>
-          Using the Device domain, check if "is_bot" is set to "true".
+          Using the Device domain, check if "bot" is set to "true".
           <br><br>
           <a href="http://codepen.io/TextGlass/pen/gaXMmB?editors=101">CodePen example</a>
         </p>
