@@ -1,0 +1,65 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "test",
+  "domain": "reference_a",
+  "domainVersion": "1.0",
+  "description": "reference domain a test suite",
+  "publishDate": "2015-07-10T15:14:00-0400",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "tests": [
+    {
+      "input": "one two three four five six seven",
+      "resultPatternId": "pattern2",
+      "resultAttributes": {
+        "test": "2",
+        "parent": "1"
+      }
+    },
+    {
+      "input": " one,two;three; ,four     five,,,six;;;seven  ",
+      "resultPatternId": "pattern2"
+    },
+    {
+      "input": "one two three six five four seven",
+      "resultPatternId": "pattern3"
+    },
+    {
+      "input": "",
+      "resultPatternId": "unknown"
+    },
+    {
+      "input": "no one knows what this stuff is anyway!",
+      "resultPatternId": "unknown",
+      "resultAttributes": {
+        "error": "true"
+      }
+    },
+    {
+      "input": "one two three four five six ,bingo;;, seven",
+      "resultPatternId": "pattern1"
+    },
+    {
+      "input": "one 222 cc ready",
+      "resultPatternId": "pattern4",
+      "resultAttributes": {
+        "test": "4",
+        "transformed_attr": "222"
+      }
+    },
+    {
+      "input": "one two cc ready",
+      "resultPatternId": "pattern4",
+      "resultAttributes": {
+        "test": "4",
+        "transformed_attr": "error"
+      }
+    },
+    {
+      "input": "three four FIVE one-NINE seven",
+      "resultPatternId": "pattern5"
+    }
+  ]
+}

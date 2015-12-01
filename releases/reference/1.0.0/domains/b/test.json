@@ -1,0 +1,34 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "test",
+  "domain": "reference_b",
+  "domainVersion": "1.0",
+  "description": "reference domain tests for devices, example only",
+  "publishDate": "2015-07-20T19:11:59+0000",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "tests": [
+    {
+      "input": "Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X; zh-cn) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/21.0.1180.82 Mobile/10A403 Safari/7534.48.3",
+      "resultPatternId": "ipad",
+      "resultAttributes": {
+        "isPhone": "false",
+        "isTablet": "true"
+      }
+    },
+    {
+      "input": "Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3",
+      "resultPatternId": "iphone",
+      "resultAttributes": {
+        "isPhone": "true",
+        "isTablet": "false"
+      }
+    },
+    {
+      "input": "Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; es) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.428 Mobile Safari/534.11+",
+      "resultPatternId": "unknown"
+    }
+  ]
+}

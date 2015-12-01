@@ -1,0 +1,37 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "attributePatch",
+  "domain": "reference_e",
+  "domainVersion": "1.0",
+  "description": "reference domain e, patch files",
+  "publishDate": "2015-08-01T17:41:44-0400",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "attributes": {
+    "p2": {
+      "parentId": "root",
+      "attributes": {
+        "test": "22"
+      }
+    },
+    "p3": {
+      "parentId": "root",
+      "attributes": {
+        "test": "3"
+      }
+    },
+    "proot": {
+      "attributes": {
+        "proot": "true"
+      }
+    },
+    "root": {
+      "parentId": "proot",
+      "attributes": {
+        "root": "false"
+      }
+    }
+  }
+}

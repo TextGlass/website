@@ -1,0 +1,46 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "pattern",
+  "domain": "reference_e",
+  "domainVersion": "1.0",
+  "description": "reference domain e, patch files",
+  "publishDate": "2015-08-01T17:41:44-0400",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "inputParser": {
+    "tokenSeperators": [ " ", ",", ";" ],
+    "ngramConcatSize": 2
+  },
+  "patternSet": {
+    "patterns": [
+      {
+        "patternId": "p1",
+        "rankType": "Weak",
+        "patternType": "Simple",
+        "patternTokens": ["one"]
+      },
+      {
+        "patternId": "p2",
+        "rankType": "Weak",
+        "patternType": "Simple",
+        "patternTokens": ["two"]
+      },
+      {
+        "patternId": "error",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["thisis"]
+      }
+    ]
+  },
+  "attributes": {
+    "p1": {
+      "parentId": "root",
+      "attributes": {
+        "test": "1"
+      }
+    }
+  }
+}

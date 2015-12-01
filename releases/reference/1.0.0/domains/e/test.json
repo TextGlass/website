@@ -1,0 +1,41 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "test",
+  "domain": "reference_e",
+  "domainVersion": "1.0",
+  "description": "reference domain e test suite",
+  "publishDate": "2015-08-01T17:41:44-0400",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "tests": [
+    {
+      "input": "This Is One Here",
+      "resultPatternId": "p1",
+      "resultAttributes": {
+        "test": "1",
+        "proot": "true",
+        "root": "false"
+      }
+    },
+    {
+      "input": "This Is Two Here",
+      "resultPatternId": "p2",
+      "resultAttributes": {
+        "test": "22",
+        "proot": "true",
+        "root": "false"
+      }
+    },
+    {
+      "input": "This Is Three Here",
+      "resultPatternId": "p3",
+      "resultAttributes": {
+        "test": "3",
+        "proot": "true",
+        "root": "false"
+      }
+    }
+  ]
+}

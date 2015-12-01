@@ -1,0 +1,197 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "pattern",
+  "domain": "reference_c",
+  "domainVersion": "1.0",
+  "description": "reference domain c, transformers",
+  "publishDate": "2015-08-01T12:32:50-0400",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "patternSet": {
+    "patterns": [
+      {
+        "patternId": "123",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["123"]
+      },
+      {
+        "patternId": "123",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["123x"]
+      },
+      {
+        "patternId": "233",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["233"]
+      },
+      {
+        "patternId": "344",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["344"]
+      },
+      {
+        "patternId": "abcd",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": [" aaa  bbb  ccc  dddd "]
+      },
+      {
+        "patternId": "y",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["yyy"]
+      },
+      {
+        "patternId": "Z",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["ZZZ"]
+      },
+      {
+        "patternId": "111",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["x111x"]
+      }
+    ]
+  },
+  "attributes": {
+    "123": {
+      "attributes": {
+        "123": "true"
+      },
+      "attributeTransformers": {
+        "isNumber" : {
+          "defaultValue": "false",
+          "transformers": [
+            {
+              "type": "IsNumber"
+            }
+          ]
+        }
+      }
+    },
+    "Z": {
+      "attributes": {
+        "Z": "true",
+        "z": "false"
+      },
+      "attributeTransformers": {
+        "case" : {
+          "transformers": [
+            {
+              "type": "LowerCase"
+            }
+          ]
+        }
+      }
+    },
+    "y": {
+      "attributes": {
+        "y": "true"
+      },
+      "attributeTransformers": {
+        "case" : {
+          "transformers": [
+            {
+              "type": "UpperCase"
+            }
+          ]
+        }
+      }
+    },
+    "344": {
+      "attributes": {
+        "344": "true"
+      },
+      "attributeTransformers": {
+        "replaced" : {
+          "transformers": [
+            {
+              "type": "ReplaceAll",
+              "parameters": {
+                "find": "4",
+                "replaceWith": "3"
+              }
+            }
+          ]
+        },
+        "replaced2" : {
+          "transformers": [
+            {
+              "type": "ReplaceAll",
+              "parameters": {
+                "find": "4",
+                "replaceWith": "4"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "233": {
+      "parentId": "233p",
+      "attributes": {
+        "233": "true"
+      }
+    },
+    "233p": {
+      "attributeTransformers": {
+        "replaced" : {
+          "transformers": [
+            {
+              "type": "ReplaceFirst",
+              "parameters": {
+                "find": "3",
+                "replaceWith": "2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "abcd": {
+      "attributeTransformers": {
+        "split" : {
+          "transformers": [
+            {
+              "type": "SplitAndGet",
+              "parameters": {
+                "delimiter": " ",
+                "get": 2
+              }
+            }
+          ]
+        }
+      }
+    },
+    "111": {
+      "attributes": {
+        "111": "true"
+      },
+      "attributeTransformers": {
+        "isNumber" : {
+          "defaultValue": "false",
+          "transformers": [
+            {
+              "type": "Substring",
+              "parameters": {
+                "start": 1,
+                "maxLength": 3
+              }
+            },
+            {
+              "type": "IsNumber"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

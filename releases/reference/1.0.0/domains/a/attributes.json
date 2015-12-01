@@ -1,0 +1,77 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "attribute",
+  "domain": "reference_a",
+  "domainVersion": "1.0",
+  "description": "reference domain a",
+  "publishDate": "2015-07-10T15:14:00-0400",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "attributes": {
+    "unknown": {
+      "attributes": {
+        "error": "true"
+      }
+    },
+    "pattern1": {
+      "attributes": {
+        "test": "1"
+      }
+    },
+    "pattern2": {
+      "parentId": "parent1",
+      "attributes": {
+        "test": "2"
+      }
+    },
+    "parent1": {
+      "attributes": {
+        "parent": "1",
+        "test": "4"
+      }
+    },
+    "pattern3": {
+      "attributes": {
+        "test": "3"
+      }
+    },
+    "pattern4": {
+      "attributes": {
+        "test": "4"
+      },
+      "attributeTransformers": {
+        "transformed_attr" : {
+          "defaultValue": "error",
+          "transformers": [
+            {
+              "type": "ReplaceAll",
+              "parameters": {
+                "find": "c",
+                "replaceWith": "cc"
+              }
+            },
+            {
+              "type": "SplitAndGet",
+              "parameters": {
+                "delimiter": "cccc",
+                "get": 0
+              }
+            },
+            {
+              "type": "SplitAndGet",
+              "parameters": {
+                "delimiter": " ",
+                "get": -1
+              }
+            },
+            {
+              "type": "IsNumber"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

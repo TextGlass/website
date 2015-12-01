@@ -1,0 +1,66 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "test",
+  "domain": "reference_d",
+  "domainVersion": "1.0",
+  "description": "reference domain d test suite",
+  "publishDate": "2015-08-01T15:18:43-0400",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "tests": [
+    {
+      "input": "test aaa bbb done",
+      "resultPatternId": "a"
+    },
+    {
+      "input": "test bbb aaa done",
+      "resultPatternId": "b"
+    },
+    {
+      "input": "test bbb aaa cccc done",
+      "resultPatternId": "c"
+    },
+    {
+      "input": "test bbb aaa eee cccc ddd done",
+      "resultPatternId": "de"
+    },
+    {
+      "input": "1",
+      "resultPatternId": "1"
+    },
+    {
+      "input": "1 2",
+      "resultPatternId": "2"
+    },
+    {
+      "input": "1 2 3",
+      "resultPatternId": "3"
+    },
+    {
+      "input": "1 2 3 4",
+      "resultPatternId": "4"
+    },
+    {
+      "input": "1 2 3 4 5",
+      "resultPatternId": "5"
+    },
+    {
+      "input": "1 2 3 4 5 6",
+      "resultPatternId": "6"
+    },
+    {
+      "input": "1 2 3 4 5 6 7",
+      "resultPatternId": "7"
+    },
+    {
+      "input": "zz",
+      "resultPatternId": "zz"
+    },
+    {
+      "input": "yy zz",
+      "resultPatternId": "yz"
+    }
+  ]
+}

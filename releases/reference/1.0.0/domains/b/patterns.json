@@ -1,0 +1,38 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "pattern",
+  "domain": "reference_b",
+  "domainVersion": "1.0",
+  "description": "reference domain for devices, example only",
+  "publishDate": "2015-07-20T18:52:57+0000",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "inputParser": {
+    "transformers": [
+      {
+        "type": "LowerCase"
+      }
+    ],
+    "tokenSeperators": [ " ", "-", "_", "\\", "/", "[", "]", "(", ")", ";" ],
+    "ngramConcatSize": 4
+  },
+  "patternSet": {
+    "defaultId": "unknown",
+    "patterns": [
+      {
+        "patternId": "iphone",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["iphone"]
+      },
+      {
+        "patternId": "ipad",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["ipad"]
+      }
+    ]
+  }
+}

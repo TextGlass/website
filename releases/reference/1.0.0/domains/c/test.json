@@ -1,0 +1,83 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "test",
+  "domain": "reference_c",
+  "domainVersion": "1.0",
+  "description": "reference domain c test suite",
+  "publishDate": "2015-08-01T12:32:50-0400",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "tests": [
+    {
+      "input": "test",
+      "resultPatternId": null
+    },
+    {
+      "input": "123",
+      "resultPatternId": "123",
+      "resultAttributes": {
+        "123": "true",
+        "isNumber": "123"
+      }
+    },
+    {
+      "input": "123x",
+      "resultPatternId": "123",
+      "resultAttributes": {
+        "123": "true",
+        "isNumber": "false"
+      }
+    },
+    {
+      "input": "344",
+      "resultPatternId": "344",
+      "resultAttributes": {
+        "344": "true",
+        "replaced": "333",
+        "replaced2": "344"
+      }
+    },
+    {
+      "input": " aaa  bbb  ccc  dddd ",
+      "resultPatternId": "abcd",
+      "resultAttributes": {
+        "split": "ccc"
+      }
+    },
+    {
+      "input": "ZZZ",
+      "resultPatternId": "Z",
+      "resultAttributes": {
+        "z": "false",
+        "Z": "true",
+        "case": "zzz"
+      }
+    },
+    {
+      "input": "yyy",
+      "resultPatternId": "y",
+      "resultAttributes": {
+        "y": "true",
+        "case": "YYY"
+      }
+    },
+    {
+      "input": "233",
+      "resultPatternId": "233",
+      "resultAttributes": {
+        "233": "true",
+        "replaced": "223"
+      }
+    },
+    {
+      "input": "x111x",
+      "resultPatternId": "111",
+      "resultAttributes": {
+        "111": "true",
+        "isNumber": "111"
+      }
+    }
+  ]
+}

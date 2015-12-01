@@ -1,0 +1,101 @@
+{
+  "TextGlassSpecVersion": 1.0,
+  "type": "pattern",
+  "domain": "reference_d",
+  "domainVersion": "1.0",
+  "description": "reference domain d, ranking",
+  "publishDate": "2015-08-01T15:18:43-0400",
+  "legal": {
+    "copyright": "(c) 2015 TextGlass",
+    "license": "Apache License 2.0"
+  },
+  "inputParser": {
+    "tokenSeperators": [" "]
+  },
+  "patternSet": {
+    "patterns": [
+      {
+        "patternId": "a",
+        "rankType": "Weak",
+        "patternType": "Simple",
+        "patternTokens": ["aaa"]
+      },
+      {
+        "patternId": "b",
+        "rankType": "Weak",
+        "patternType": "Simple",
+        "patternTokens": ["bbb"]
+      },
+      {
+        "patternId": "c",
+        "rankType": "Weak",
+        "patternType": "Simple",
+        "patternTokens": ["cccc"]
+      },
+      {
+        "patternId": "de",
+        "rankType": "Weak",
+        "patternType": "SimpleAnd",
+        "patternTokens": ["ddd", "eee"]
+      },
+      {
+        "patternId": "1",
+        "rankType": "None",
+        "rankValue": -100,
+        "patternType": "Simple",
+        "patternTokens": ["1"]
+      },
+      {
+        "patternId": "2",
+        "rankType": "None",
+        "patternType": "Simple",
+        "patternTokens": ["2"]
+      },
+      {
+        "patternId": "3",
+        "rankType": "None",
+        "rankValue": 100,
+        "patternType": "Simple",
+        "patternTokens": ["3"]
+      },
+      {
+        "patternId": "4",
+        "rankType": "Weak",
+        "rankValue": -100,
+        "patternType": "Simple",
+        "patternTokens": ["4"]
+      },
+      {
+        "patternId": "5",
+        "rankType": "Weak",
+        "patternType": "Simple",
+        "patternTokens": ["5"]
+      },
+      {
+        "patternId": "6",
+        "rankType": "Weak",
+        "rankValue": 100,
+        "patternType": "Simple",
+        "patternTokens": ["6"]
+      },
+      {
+        "patternId": "7",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["7"]
+      },
+      {
+        "patternId": "zz",
+        "rankType": "Strong",
+        "patternType": "Simple",
+        "patternTokens": ["zz"]
+      },
+      {
+        "patternId": "yz",
+        "rankType": "Strong",
+        "patternType": "SimpleAnd",
+        "patternTokens": ["yy", "zz"]
+      }
+    ]
+  }
+}
