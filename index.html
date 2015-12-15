@@ -314,7 +314,7 @@
           get('demotext').innerHTML += ' Your operating system is ' + os.name +
             (os.version ? ' ' + os.version : '') + '.';
         }
-        if(browser.mobile || os.mobile) {
+        if(browser.mobile === 'true' || os.mobile === 'true') {
           get('demotext').innerHTML += ' You are on a mobile device.';
         }
       }
