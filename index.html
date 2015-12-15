@@ -306,7 +306,6 @@
           get('demotext').innerHTML = 'You are using an unknown browser.';
         } else {
           get('demotext').innerHTML = 'Your browser is ' + browser.name +
-            (browser.mobile?' (mobile)':'') +
             (browser.version? ' version ' + browser.version : '') + '.';
         }
         if(os.unknown) {
@@ -314,6 +313,9 @@
         } else {
           get('demotext').innerHTML += ' Your operating system is ' + os.name +
             (os.version ? ' ' + os.version : '') + '.';
+        }
+        if(browser.mobile || os.mobile) {
+          get('demotext').innerHTML += ' You are on a mobile device.';
         }
       }
     }
