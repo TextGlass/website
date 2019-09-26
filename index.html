@@ -105,7 +105,7 @@
 
     <p class="max">
       TextGlass is a text classification project. This encompasses things
-      like device, browser, and OS detection. Give TextGlass a
+      like device, browser, OS detection, and even WAF rules. Give TextGlass a
       string (like a HTTP User-Agent request header) and it will tell you what it is.
     </p>
     <p class="max">
@@ -264,6 +264,15 @@
       </li>
       <li>
         <p class="max">
+          <b>Can TextGlass be used as a WAF?</b>
+          <br><br>
+          Absolutely. The domain specification is forward compatible with the type of
+          advanced pattern matching functionality a WAF would require. When a security domain
+          is used on an HTTP platform like Varnish, Nginx, or Apache, the result is a WAF.
+        </p>
+      </li>
+      <li>
+        <p class="max">
           <b>How can I contribute?</b>
           <br><br>
           By creating issues on the Github project pages for missing devices, browsers,
@@ -285,7 +294,7 @@
     </ul>
 
     <br>
-    <div class="copyright">Copyright (c) 2015 TextGlass</div><br>
+    <div class="copyright">Copyright (c) 2015-2019 TextGlass</div><br>
 
   </div>
 
